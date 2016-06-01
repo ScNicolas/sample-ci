@@ -10,6 +10,9 @@ describe('POST /contacts/:name',function(){
 	it('should create a new contact',function(){
 		return request(api).post('/contacts/foo').send().expect(200)
 	})
+	it('should not be authorized to create a new contact with an already',function(){
+		return request(api).post('/contacts/foo').send().expect(403)
+	})
 })
 describe('PUT /contacts/:name/:new',function(){
 	it('should update contacts with the same name',function(){
