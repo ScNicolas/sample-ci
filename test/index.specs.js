@@ -2,7 +2,7 @@ var request = require('supertest');
 var api = require('../index');
 
 describe('contacts',function(){
-	describe('GET /contacts',function(){
+	describe('GET /api/contacts',function(){
 		it('should return 200',function(){
 			return request(api)
 			.get('/contacts')
@@ -11,7 +11,7 @@ describe('contacts',function(){
 		});
 	});
 	
-	describe('POST /contacts/:name',function(){
+	describe('POST /api/contacts/:name',function(){
 		it('should create a new contact',function(){
 			return request(api)
 			.post('/contacts/foo')
@@ -25,7 +25,7 @@ describe('contacts',function(){
 			.expect(403)
 		});
 	});
-	describe('PUT /contacts/:name/:new',function(){
+	describe('PUT /api/contacts/:name/:new',function(){
 		it('should cupdtae contact with same name',function(){
 			return request(api)
 			.put('/contacts/foo/bar')
@@ -33,7 +33,7 @@ describe('contacts',function(){
 			.expect(200)
 		});
 	});
-	describe('DELETE /contacts/:name',function(){
+	describe('DELETE /api/contacts/:name',function(){
 		it('should remove a new contact',function(){
 			return request(api)
 			.delete('/contacts/foo')
