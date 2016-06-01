@@ -20,7 +20,7 @@ describe('contacts',function(){
 		});
 		it('should not be authorized to create a new contact with an already ',function(){
 			return request(api)
-			.post('/contacts/exist')
+			.post('/api/contacts/exist')
 			.send()
 			.expect(403)
 		});
@@ -36,7 +36,7 @@ describe('contacts',function(){
 	describe('DELETE /api/contacts/:name',function(){
 		it('should remove a new contact',function(){
 			return request(api)
-			.delete('/contacts/foo')
+			.delete('/api/contacts/foo')
 			.send()
 			.expect(200)
 		});
