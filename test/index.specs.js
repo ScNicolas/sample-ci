@@ -5,7 +5,7 @@ describe('contacts',function(){
 	describe('GET /api/contacts',function(){
 		it('should return 200',function(){
 			return request(api)
-			.get('/contacts')
+			.get('/api/contacts')
 			.send()
 			.expect(200)
 		});
@@ -14,7 +14,7 @@ describe('contacts',function(){
 	describe('POST /api/contacts/:name',function(){
 		it('should create a new contact',function(){
 			return request(api)
-			.post('/contacts/foo')
+			.post('/api/contacts/foo')
 			.send()
 			.expect(200)
 		});
@@ -28,7 +28,7 @@ describe('contacts',function(){
 	describe('PUT /api/contacts/:name/:new',function(){
 		it('should cupdtae contact with same name',function(){
 			return request(api)
-			.put('/contacts/foo/bar')
+			.put('/api/contacts/foo/bar')
 			.send()
 			.expect(200)
 		});
